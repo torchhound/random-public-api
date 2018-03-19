@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 class LoadButton extends Component {
 	constructor() {
@@ -38,8 +39,8 @@ class LoadButton extends Component {
 	render() {
 		return (
 			<div>
-				<button onClick = {this.handleClick.bind(this)}>Click Me!</button>
-				<div>
+				<button onClick = {this.handleClick.bind(this)} class="button">Click Me!</button>
+				<div class="box box-padding" id="buttonOutput">
 					<h1>{"API: " + this.state.api}</h1>
 					<h2>{"Description: " + this.state.description}</h2>
 					<h2>{"Link: " + this.state.link}</h2>

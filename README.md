@@ -2,10 +2,10 @@
 
 Displays a random public api when you click a button. Fetches from [publicapis.org](https://api.publicapis.org/). Built with React and create-react-app.
 
-#Installing
+# Installing
 
 `yarn install`
 
-#Deploying
+# Deploying
 
 `yarn run deploy`
