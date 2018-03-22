@@ -16,11 +16,12 @@ class LoadButton extends Component {
 	handleClick(event) {
 		event.preventDefault();
 
-		if (this.state.count !== 0 && this.state.entries !== []) {
-			this.setState({index: Math.floor(Math.random() * this.state.count)});
-			this.setState({api: this.state.entries[this.state.index].API});
-			this.setState({description: this.state.entries[this.state.index].Description});
-			this.setState({link: this.state.entries[this.state.index].Link});
+		if (this.state.count !== 0 && this.state.entries.length !== 0) {
+			let localIndex = Math.floor(Math.random() * this.state.count);
+			this.setState({index: localIndex});
+			this.setState({api: this.state.entries[localIndex].API});
+			this.setState({description: this.state.entries[localIndex].Description});
+			this.setState({link: this.state.entries[localIndex].Link});
 		} else {
 			fetch('https://api.publicapis.org/entries')
 			.then(results => {
@@ -41,9 +42,9 @@ class LoadButton extends Component {
 			<div>
 				<button onClick = {this.handleClick.bind(this)} class="button">Click Me!</button>
 				<div class="box box-padding" id="buttonOutput">
-					<h1>{"API: " + this.state.api}</h1>
-					<h2>{"Description: " + this.state.description}</h2>
-					<h2>{"Link: " + this.state.link}</h2>
+					<h1><b>API: </b> {this.state.api}</h1>
+					<h2><b>Description: </b> {this.state.description}</h2>
+					<h2><b>Link: </b> {this.state.link}</h2>
 				</div>
 			</div>
 		);
