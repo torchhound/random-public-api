@@ -13,6 +13,10 @@ class LoadButton extends Component {
 		};
 	}
 
+  componentDidMount() {
+    document.getElementById('randomButton').click();
+  }
+
 	handleClick(event) {
 		event.preventDefault();
 
@@ -40,11 +44,11 @@ class LoadButton extends Component {
 	render() {
 		return (
 			<div>
-				<button onClick = {this.handleClick.bind(this)} class="button">Click Me!</button>
+				<button id="randomButton" onClick = {this.handleClick.bind(this)} class="button">Click Me!</button>
 				<div class="box box-padding" id="buttonOutput">
 					<h1><b>API: </b> {this.state.api}</h1>
 					<h2><b>Description: </b> {this.state.description}</h2>
-					<h2><b>Link: </b> {this.state.link}</h2>
+					<h2><b>Link: </b> <a href={this.state.link}>{this.state.link}</a></h2>
 				</div>
 			</div>
 		);
